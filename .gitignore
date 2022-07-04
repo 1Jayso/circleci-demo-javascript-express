@@ -6,6 +6,7 @@ dump.rdb
 .vscode/
 public/*
 dist
-.vscode
+venv/
+env/
 coverage/
 .nyc_output/
