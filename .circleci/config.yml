@@ -37,7 +37,7 @@ jobs:
           at: /tmp/workspace
 
       - run: |
-          cat output.txt
+          cat /tmp/workspace/output.txt
     
   
 
