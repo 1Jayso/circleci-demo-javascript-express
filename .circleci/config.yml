@@ -6,10 +6,15 @@ executors:
     docker:
       - image: cimg/base:stable
     working_directory: /tmp
+  # Resusable commands
 commands:
   print_pipeline_id:
+    parameters:
+      id:
+        type: string
     steps:
-      - run: echo ${CIRCLE_WORKFLOW_ID}
+      - run: echo << parameters.id >>
+      # - run: echo ${CIRCLE_WORKFLOW_ID}
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
@@ -36,7 +41,8 @@ jobs:
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
-      - print_pipeline_id
+      - print_pipeline_id:
+          id: << pipeline.id >>
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
           at: /tmp/workspace
