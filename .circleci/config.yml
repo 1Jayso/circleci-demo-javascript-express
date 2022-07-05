@@ -47,8 +47,8 @@ jobs:
 
       - run: |
           cat /tmp/workspace/output.txt
-      - print_pipeline_id:
-          id: << pipeline.id >>
+
+      
           
     
   
