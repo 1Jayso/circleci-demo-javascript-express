@@ -49,7 +49,7 @@ jobs:
           at: /tmp/workspace
 
       - run: |
-          cat /tmp/workspace/output.txt
+          cat /tmp/workspace/output.tx
       - run:
           name: on error
           command: echo "Hello Error!"
